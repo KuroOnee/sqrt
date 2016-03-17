@@ -1,11 +1,20 @@
 #include <stdio.h>
 #include <locale.h>
-#define n 100
+
+int sqrt(int a, int b, int c, int* x, int* y)
+{
+    
+}
 int main()
 {
-    char s[100];
+    int a,b,c,x1,x2;
     setlocale(LC_ALL, "Rus");
-    printf("Введите уравнение: ");
-    fgets(s,n,stdin);
+    printf("Введите a: ");
+    scanf("%d",&a);   
+    printf("Введите b: ");
+    scanf("%d",&b);   
+    printf("Введите c: ");
+    scanf("%d",&c);
+    sqrt(a,b,c,x1,x2);
     return 0;
 }
