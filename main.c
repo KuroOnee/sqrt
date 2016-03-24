@@ -6,7 +6,6 @@ int func(int a, int b, int c)
 {
     float d;
     d = (b * b) - (4 * a * c);
-    printf ("%f",d);
     if (d > 0)
     {
     x1 = (-b + sqrt(d))/ (2 * a);
@@ -33,15 +32,14 @@ int main()
     printf("Введите c: ");
     scanf("%f",&c);
     d = func(a,b,c);
-    printf ("%d",d);
     if (d == 2)
 	{
-	printf("У уравнения 1 корень: %f",x1);
+	printf("У уравнения 1 корень: %.2f",x1);
 	return 0;
 	}
     if (d == 1)
 	{
-	printf("У уравнения 2 корня: %f %f",x1 ,x2);
+	printf("У уравнения 2 корня: %.2f %.2f",x1 ,x2);
 	return 0;
 	}
     if (d == 0)
