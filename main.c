@@ -23,7 +23,7 @@ int sqrtsolve(float a, float b, float c)
 int main()
 {
     float a,b,c;
-    short d;
+    short k;
     setlocale(LC_ALL, "Rus");
     printf("Введите a: ");
     scanf("%f", &a);   
@@ -31,18 +31,18 @@ int main()
     scanf("%f", &b);   
     printf("Введите c: ");
     scanf("%f", &c);
-    d = sqersolve(a, b, c);
-    if (d == 1)
+    k = sqersolve(a, b, c);
+    if (k == 1)
 	{
 	printf("У уравнения 1 корень: %.2f", x1);
 	return 0;
 	}
-    if (sqrtsolve(a, b, c) == 2)
+    if (k == 2)
 	{
 	printf("У уравнения 2 корня: %.2f %.2f", x1, x2);
 	return 0;
 	}
-    if (sqrtsolve(a, b, c) == 0)
+    if (k == 0)
 	printf ("У уравнения нет корней. ");
     return 0;
 }
