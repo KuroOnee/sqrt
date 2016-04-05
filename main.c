@@ -10,12 +10,12 @@ int sqrtsolve(float a, float b, float c)
     {
     x1 = (-b + sqrt(d)) / (2 * a);
     x2 = (-b - sqrt(d)) / (2 * a);
-    return 1;
+    return 2;
     }
     if (d == 0)
     {
     x1 = -b / (2 * a);
-    return 2;
+    return 1;
     }
     return 0;
 }
@@ -23,6 +23,7 @@ int sqrtsolve(float a, float b, float c)
 int main()
 {
     float a,b,c;
+    short d;
     setlocale(LC_ALL, "Rus");
     printf("Введите a: ");
     scanf("%f", &a);   
@@ -30,12 +31,13 @@ int main()
     scanf("%f", &b);   
     printf("Введите c: ");
     scanf("%f", &c);
-    if (sqrtsolve(a, b, c) == 2)
+    d = sqersolve(a, b, c);
+    if (d == 1)
 	{
 	printf("У уравнения 1 корень: %.2f", x1);
 	return 0;
 	}
-    if (sqrtsolve(a, b, c) == 1)
+    if (sqrtsolve(a, b, c) == 2)
 	{
 	printf("У уравнения 2 корня: %.2f %.2f", x1, x2);
 	return 0;
