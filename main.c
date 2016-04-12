@@ -1,28 +1,35 @@
 #include <stdio.h>
 #include <locale.h>
 #include <math.h>
-float x1, x2;
-int sqrtsolve(float a, float b, float c)
+#define Noroots 0
+#define Oneroot 1
+#define Tworoots 2
+#define error -1
+int sqrtsolve(float a, float b, float c, float* f, float* e)
 {
-    float d;
+    float d, x1, x2;
     d = (b * b) - (4 * a * c);
     if (d > 0)
     {
     x1 = (-b + sqrt(d)) / (2 * a);
     x2 = (-b - sqrt(d)) / (2 * a);
-    return 1;
+    *f = x1;
+    *e = x2;
+    return Tworoots;
     }
     if (d == 0)
     {
     x1 = -b / (2 * a);
-    return 2;
+    f = &x1;
+    return Oneroot;
     }
-    return 0;
+    return Noroots;
 }
 
 int main()
 {
-    float a,b,c;
+    float a, b, c, x1, x2;
+    short k;
     setlocale(LC_ALL, "Rus");
     printf("Введите a: ");
     scanf("%f", &a);   
@@ -30,17 +37,23 @@ int main()
     scanf("%f", &b);   
     printf("Введите c: ");
     scanf("%f", &c);
-    if (sqrtsolve(a, b, c) == 2)
+    k = sqrtsolve(a, b, c, &x1, &x2);
+    if (k == Oneroot)
 	{
 	printf("У уравнения 1 корень: %.2f", x1);
 	return 0;
 	}
-    if (sqrtsolve(a, b, c) == 1)
+    if (k == Tworoots)
 	{
 	printf("У уравнения 2 корня: %.2f %.2f", x1, x2);
 	return 0;
 	}
-    if (sqrtsolve(a, b, c) == 0)
+    if (k == Noroots)
+	{
 	printf ("У уравнения нет корней. ");
-    return 0;
+	return 0;
+	}
+    if (k == error)
+	printf ("Что-то пошло не так!");
+    return -1;
 }
