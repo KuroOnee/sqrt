@@ -48,12 +48,6 @@ int main()
 	printf("У уравнения 2 корня: %.2f %.2f", x1, x2);
 	return 0;
 	}
-    if (k == Noroots)
-	{
-	printf ("У уравнения нет корней. ");
-	return 0;
-	}
-    if (k == error)
-	printf ("Что-то пошло не так!");
-    return -1;
+    printf ("У уравнения нет корней. ");
+    return 0;
 }
