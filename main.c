@@ -13,8 +13,8 @@ int sqrtsolve(float a, float b, float c, float* f, float* e)
     {
     x1 = (-b + sqrt(d)) / (2 * a);
     x2 = (-b - sqrt(d)) / (2 * a);
-    f = &x1;
-    e = &x2;
+    *f = x1;
+    *e = x2;
     return Tworoots;
     }
     if (d == 0)
