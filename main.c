@@ -4,10 +4,13 @@
 #define Noroots 0
 #define Oneroot 1
 #define Tworoots 2
-#define error -1
 int sqrtsolve(float a, float b, float c, float* f, float* e)
 {
     float d, x1, x2;
+    if ((a == 0) && (b == 0) && (c == 0))
+	{printf("Это разве уравнение?");
+	 return -1;
+	}
     d = (b * b) - (4 * a * c);
     if (d > 0)
     {
@@ -48,6 +51,11 @@ int main()
 	printf("У уравнения 2 корня: %.2f %.2f", x1, x2);
 	return 0;
 	}
-    printf ("У уравнения нет корней. ");
+    if (k == Noroots)
+	{
+	printf ("У уравнения нет корней. ");
+	return 0;
+	}
+    printf("Что-то пошло не так! Или вы меня обманываете? =)");
     return 0;
 }
