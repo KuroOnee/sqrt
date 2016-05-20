@@ -1,9 +1,8 @@
 #include "def.h"
 #include <math.h>
 
-int sqrtsolve(float a, float b, float c, float* f, float* e)
+int sqrtsolve(double a, double b, double c)
 {
-	float d, x1, x2;
 	if ((a == 0) && (b == 0) && (c == 0))
 		return -1;
 	d = (b * b) - (4 * a * c);
@@ -11,15 +10,12 @@ int sqrtsolve(float a, float b, float c, float* f, float* e)
 		{
 		x1 = (-b + sqrt(d)) / (2 * a);
 		x2 = (-b - sqrt(d)) / (2 * a);
-		*f = x1;
-		*e = x2;
-		return Tworoots;
+		return 2;
 		}
 	if (d == 0)
 		{
 		x1 = -b / (2 * a);
-		f = &x1;
-		return Oneroot;
+		return 1;
 		}
-	return Noroots;
+	return 0;
 }

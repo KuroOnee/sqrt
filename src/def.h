@@ -9,5 +9,9 @@
 #endif
 #ifndef SQRTSOLVE
 #define SQRTSOLVE
-int sqrtsolve(float a, float b, float c, float* f, float* e);
+int sqrtsolve(double a, double b, double c);
+#endif
+#ifndef COEF
+#define COEF
+double d, x1, x2;
 #endif
