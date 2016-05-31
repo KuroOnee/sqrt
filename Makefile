@@ -11,11 +11,11 @@ obj/func.o: src/func.c
 bin/test: obj/func.o obj/func_test.o obj/ctest.o
 	gcc -Wall -o bin/test obj/ctest.o obj/func.o obj/func_test.o -lm
 
-obj/ctest.o: test/ctest.c
-	gcc -Wall -c test/ctest.c -o obj/ctest.o -Ithirdparty
+obj/ctest.o: Tests/ctest.c
+	gcc -Wall -c Tests/ctest.c -o obj/ctest.o -Ithirdparty
 
-obj/func_test.o: test/func_test.c
-	gcc -Wall -c test/func_test.c -o obj/func_test.o -Ithirdparty -Isrc
+obj/func_test.o: Tests/func_test.c
+	gcc -Wall -c Tests/func_test.c -o obj/func_test.o -Ithirdparty -Isrc
 
 bin: bin/Sqrt
 

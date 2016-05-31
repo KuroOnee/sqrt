@@ -4,7 +4,7 @@
 
 int main()
 {
-	double a, b, c;
+	double a, b, c, d, x1, x2;
 	int k;
 	setlocale(LC_ALL, "Rus");
 	printf("Введите a: ");
@@ -13,7 +13,7 @@ int main()
 	scanf("%lf", &b);   
 	printf("Введите c: ");
 	scanf("%lf", &c);
-	k = sqrtsolve(a, b, c);
+	k = sqrtsolve(a, b, c, &x1, &x2, &d);
 	if (k == Oneroot)
 		{
 		printf("У уравнения 1 корень: %.2lf", x1);
